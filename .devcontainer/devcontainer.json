@@ -1,0 +1,28 @@
+{
+	"workspaceFolder": "/workspace",
+	"name": "mastra-playground",
+	"build": {
+		"dockerfile": "./Dockerfile"
+	},
+	"features": {
+		"docker-from-docker": {
+			"version": "latest"
+		}
+	},
+	"mounts": [
+		"source=${localWorkspaceFolder},target=/workspace,type=bind,consistency=cached",
+		"source=${localEnv:HOME}/.ssh,target=/root/.ssh,type=bind,consistency=cached"
+	],
+	"customizations": {
+		"vscode": {
+			"extensions": [
+				"streetsidesoftware.code-spell-checker",
+				"eamodio.gitlens",
+				"ms-azuretools.vscode-docker",
+				"esbenp.prettier-vscode",
+				"redhat.vscode-yaml",
+				"github.copilot"
+			]
+		}
+	}
+}
