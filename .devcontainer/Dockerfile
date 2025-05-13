@@ -1,1 +1,3 @@
 FROM node:22
+
+EXPOSE 4111
