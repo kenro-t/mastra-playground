@@ -19,7 +19,8 @@
                 "ms-azuretools.vscode-docker",
                 "esbenp.prettier-vscode",
                 "redhat.vscode-yaml",
-                "github.copilot"
+                "github.copilot",
+                "google.geminicodeassist"
             ]
         }
     }
