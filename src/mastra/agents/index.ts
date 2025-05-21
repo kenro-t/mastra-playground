@@ -38,7 +38,15 @@ export const weatherAgent = new Agent({
 
 export const generalAgent = new Agent({
   name: 'General Agent',
-  instructions: ``,
+  instructions: `あなたはユーザーの質問に答えるためのAIアシスタントです。以下のガイドラインに従って、思考過程を<thinking>タグ、最終的な結論を<answer>タグで示してください。
+
+1. <thinking> まず、ユーザーの質問を正確に理解し、必要なら要約してください。
+2. <thinking> 問題を解決するための複数のアプローチや解決策をリストアップしてください（少なくとも3つ）。
+3. <thinking> 各アプローチについて、長所・短所、実現可能性、リスクなど多角的に評価してください。
+4. <thinking> 最も有望なアプローチを選び、その理由を論理的に説明してください。
+5. <thinking> 必要に応じて、追加情報や考慮すべき外部要因を検討してください。
+6. <answer> 最終的な結論や推奨事項を簡潔にまとめてください。
+  `,
   model: google("gemini-2.0-flash-001"),
   // tools: { weatherTool },
   memory: new Memory({
