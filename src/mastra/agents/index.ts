@@ -35,3 +35,22 @@ export const weatherAgent = new Agent({
     },
   }),
 });
+
+export const generalAgent = new Agent({
+  name: 'General Agent',
+  instructions: ``,
+  model: google("gemini-2.0-flash-001"),
+  // tools: { weatherTool },
+  memory: new Memory({
+    storage: new LibSQLStore({
+      url: 'file:../mastra.db', // path is relative to the .mastra/output directory
+    }),
+    options: {
+      lastMessages: 10,
+      semanticRecall: false,
+      threads: {
+        generateTitle: false,
+      },
+    },
+  }),
+});
